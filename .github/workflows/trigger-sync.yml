@@ -1,0 +1,14 @@
+name: Trigger sync to oxn.github.io
+on:
+  push:
+    branches: [main]
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call another repo workflow
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SYNC_PAT }}
+          repository: oxn/oxn.github.io
+          event-type: sync_trigger
