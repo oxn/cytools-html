@@ -10,5 +10,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.SYNC_PAT }}
-          repository: oxn/oxn.github.io
+          repository: oxn/oxn.github.com
           event-type: sync_trigger
